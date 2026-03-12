@@ -36,12 +36,13 @@
     
     if (!menuToggle || !navMobile) return;
 
-    const toggleMenu = () => {
-      menuToggle.classList.toggle('active');
-      navMobile.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    };
+const toggleMenu = () => {
+  menuToggle.classList.toggle('active');
+  navMobile.classList.toggle('active');
 
+  const expanded = menuToggle.classList.contains('active');
+  menuToggle.setAttribute("aria-expanded", expanded);
+};
     on(menuToggle, 'click', toggleMenu);
 
     // Fechar menu ao clicar em link
