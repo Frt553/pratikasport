@@ -222,7 +222,7 @@ input,textarea,select{font-family:inherit}
 /* Largura/Altura */
 .w-full{width:100%}
 .h-full{height:100%}
-.min-h-screen{min-height:100vh}
+.hero{min-height:calc(100vh - 80px)}
 
 /* ============================================
    COMPONENTES
@@ -294,11 +294,26 @@ input,textarea,select{font-family:inherit}
 /* ============================================
    HERO SECTION
    ============================================ */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--color-secondary) 0%,#16213e 100%);overflow:hidden}
+.hero{
+position:relative;
+min-height:calc(100vh - 80px);
+display:flex;
+align-items:center;
+background:linear-gradient(135deg,var(--color-secondary) 0%,#16213e 100%);
+overflow:hidden
+}
 .hero::before{content:'';position:absolute;inset:0;background:url('../images/construcao-de-quadras-1.jpg') center/cover no-repeat;opacity:0.2}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,26,46,0.95) 0%,rgba(26,26,46,0.7) 50%,rgba(26,26,46,0.4) 100%)}
 
-.hero-content{position:relative;z-index:1;padding:var(--space-20) 0}
+.hero-content{
+padding:120px 0 80px;
+}
+
+@media(max-width:768px){
+.hero-content{
+padding:100px 0 60px;
+}
+}
 .hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-4);background:rgba(0,166,81,0.2);border:1px solid var(--color-primary);border-radius:var(--radius-full);color:var(--color-primary);font-size:var(--font-size-sm);font-weight:500;margin-bottom:var(--space-6)}
 .hero-title{font-size:var(--font-size-4xl);font-weight:800;color:var(--color-white);line-height:1.1;margin-bottom:var(--space-6);max-width:700px}
 .hero-title span{color:var(--color-primary)}
@@ -311,6 +326,13 @@ input,textarea,select{font-family:inherit}
 
 .hero-cta{display:flex;gap:var(--space-4);flex-wrap:wrap}
 
+@media(max-width:768px){
+.hero{
+min-height:auto;
+padding-top:120px;
+padding-bottom:80px;
+}
+}
 /* ============================================
    SERVICOS SECTION
    ============================================ */
@@ -515,7 +537,7 @@ input,textarea,select{font-family:inherit}
 .option-card{background:white;border:2px solid #e2e8f0;border-radius:0.75rem;padding:1.5rem;text-align:center;cursor:pointer;transition:all 0.2s}
 .option-card:hover{border-color:#00a651;transform:translateY(-2px)}
 .option-card.selected{border-color:#00a651;background:#f0fdf4}
-.result-box{background:linear-gradient(135deg,#00a651 0%,#008a443 100%);color:white;padding:2rem;border-radius:1rem;text-align:center;margin-top:2rem}
+.result-box{background:linear-gradient(135deg,#00a651 0%,#008a43 100%);;color:white;padding:2rem;border-radius:1rem;text-align:center;margin-top:2rem}
 .result-box .price{font-size:2.5rem;font-weight:800}
 .step-indicator{display:flex;justify-content:center;gap:0.5rem;margin-bottom:2rem}
 .step-dot{width:12px;height:12px;border-radius:50%;background:#cbd5e1;transition:all 0.3s}
@@ -675,3 +697,22 @@ img[loading="lazy"].loaded{opacity:1}
 .breadcrumb-list a{color:var(--color-gray-300);transition:color var(--transition-fast)}
 .breadcrumb-list a:hover{color:var(--color-primary)}
 .breadcrumb-list span{color:var(--color-gray-500)}
+@media(max-width:768px){
+
+.header-inner{
+height:70px;
+}
+
+.logo img{
+height:40px;
+}
+
+.hero-title{
+font-size:32px;
+}
+
+.hero-description{
+font-size:16px;
+}
+
+}
